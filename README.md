@@ -78,7 +78,7 @@ IMAGE
 - Almost all the food categories's subtotal is concentrated in a speicific sub-total ie.e 0 - 15000 dollars.
 - Mean and median time taken to deliver the orders by the stores in these top 10 food categories are 47.7 and 44.28 minutes respectively.
 
-**5. How the different prices is varying with delivery time?**<br>
+**5. How the different prices is varying with delivery time?** <br>
 <br>
 IMAGE
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/c091843c-0006-496e-9ff2-fe11ecef4c2f)
