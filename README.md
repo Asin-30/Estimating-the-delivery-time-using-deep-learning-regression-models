@@ -50,32 +50,38 @@ Each row in this file corresponds to one unique delivery. Each column correspond
 - Finally, drop the *created_at* and *actual_delivery_time* from the dataset.
 
 ### Exploratory Data Analysis (EDA)
-**% of orders as per different features**
+**% of orders as per different features** <br>
   ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/62153d5c-43d1-41d8-b857-5512a7bb8f52)
+  <br>
   *Observation*
 - Most of the order (27.87%) were for the market_id: 2 and least (7.32)% came for market_id: 6.
 - All the orders were placed in the year 2015.
 - All the orders were placed in the month of January and February. February being the month for maximum orders.
 - As it is very likely, month of delivery follows the same patter as of the order placements.
-
-**Which are the top 10 and bottom 10 stores where is business is best/worst ?**
+<br>
+**Which are the top 10 and bottom 10 stores where is business is best/worst ?**<br>
 IMAGE
+<br>
 
-**What are the store's primary categories of selling that are best/worst for business?**
+**What are the store's primary categories of selling that are best/worst for business?**<br>
 IMAGE
+<br>
 
-**How the delivery time is varying with price and type of food being ordered?**
+**How the delivery time is varying with price and type of food being ordered?**<br>
 IMAGE
 *Observation*
 - No matter the store category, top 10 food categories takes almost same time.
 - Almost all the food categories's subtotal is concentrated in a speicific sub-total ie.e 0 - 15000 dollars.
 - Mean and median time taken to deliver the orders by the stores in these top 10 food categories are 47.7 and 44.28 minutes respectively.
+<br>
 
-**How the different prices is varying with delivery time?**
+**How the different prices is varying with delivery time?**<br>
 IMAGE
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/c091843c-0006-496e-9ff2-fe11ecef4c2f)
+<br>
 
-**Comparing the performance of different markets based on the available features.**
+
+**Comparing the performance of different markets based on the available features.**<br>
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/23b51208-1e7a-4aea-bd92-099854e0f188)
 *Observation*
 - Market with id = 2 has the max number of stores followed by market = 4. Market 6 has least number of stores.
@@ -86,8 +92,10 @@ IMAGE
 - Market 3 has the products with max price.
 - TOtal onshift partners are max for market 2 and followed by 4 and is least for market 3
 - TOtal busy partners are max for market 4 and 2 and least for market 3.
+<br>
 
-**Comparing the performance of different food categories based on the available features.**
+
+**Comparing the performance of different food categories based on the available features.**<br>
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/cfb7c7dc-0fff-4113-9bdf-34f68b9eb494)
 *Observation*
 - Maximum number of stores are for 'american' food, followed by 'pizza' and 'mexican' categories. Least number of stores are for *fast* and *Indian*, among the popular food categories.
@@ -99,31 +107,41 @@ IMAGE
 - Total onshift partners are max for *Indian* restaruants and mininmum for *fast* stores.
 - TOtal busy partners are max for *Indian* and least for *fast*.
 
-**what food category stores are most prominent in each market?**
-5 of the 6 markets have store having *american* as their primary food category.
+<br>
 
-**Variation of sales on each day of month**
+**what food category stores are most prominent in each market?**<br>
+5 of the 6 markets have store having *american* as their primary food category.
+<br>
+
+**Variation of sales on each day of month**<br>
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/57a3b5d0-a320-41be-bcf1-0ef923400637)
-**variation of sales with each hour in a day**
+<br>
+
+**variation of sales with each hour in a day**<br>
 It appears that people like to order food more at late night.
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/fdc12e17-7416-4d04-9f4b-c92ae261524a)
-**Variation in sales in  a week**
+<br>
+
+**Variation in sales in  a week**<br>
 - On weekends people like to order food relatively more as compare to other days.
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/e01c86e8-da8e-4c7c-92eb-41aedb79409e)
+<br>
 
 
 
 
 ### Outlier Detection and Handling
 IQR methods is used for detection and handling.
-**Detection**
+**Detection**<br>
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/4a11f45e-e39e-41e2-adf7-79fd85b884d7)
+<br>
 
-**Outlier Removal**
+**Outlier Removal**<br>
 There was 3.18% of drop in records after removing outliers from *time_taken* and over all 7.53% drop of rows after dropping outliers from *time_taken* and *sub_total* both.
 ![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/e2245759-9f5c-42e9-8b5c-80d0c92c7123)
+<br>
 
-Post outlier removal features looked slightly normal on comparison to the earlier ones.
+Post outlier removal features looked slightly normal on comparison to the earlier ones.<br>
 
 
 
@@ -143,20 +161,20 @@ For the hypertuned model we got:
 - Mean Squared Error: 34.017430883926515
 - Root Mean Squared Error: 5.832446389288676
 
-One can observe that classical ML model are not performing well with this dataset. Next, we  will see how neural network perform for this dataset.
+There is not much difference in the performance of the model even after hyperparametric tuning. Also, one can observe that classical ML model are not performing well with this dataset. Next, we  will see how neural network perform for this dataset.
 
 #### 2 Neural Network
-**Scaling**
+**Scaling**<br>
 Before moving ahead, we need to scale our data first. We will do normalization on our dataset and use sklearn's `MinMaxScaler` for the same.
 <br>
 <br>
-**Building and training the model**
+**Building and training the model**<br>
 For the sake of easy of computation we will use only one hidden layer  in our Neural network.
 <br>
 for our first model we use 2/3 of total rows in train dataset as neurons present in hidden layer. We will use callback function `EarlyStopping` to stop the training when training and validation loss attain a flat curve.
 We will also use BatchNormalization, regularization and dropout to prevent overfitting. We will train the model for 30 epochs.
 
-**Tuning the NN model**
+**Tuning the NN model**<br>
 In this model we will decrease number of neurons in the hidden layers by a little.  Introduce a callback `LearningRateScheduler`, this will change the learning rate at every epoch and apply that learning rate to optimizer  as training progresses.
 
 
