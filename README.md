@@ -21,3 +21,31 @@ Each row in this file corresponds to one unique delivery. Each column correspond
 - **total_onshift_partners** : number of delivery partners on duty at the time order was placed
 - **total_busy_partners** : number of delivery partners attending to other tasks
 - **total_outstanding_orders** : total number of orders to be fulfilled at the moment
+
+## Understanding data
+**Structure**
+- 197428 records, 14 features
+- memory usage : 21.1+ MB
+
+**data types**
+- 5 features of float64 datatype
+- 4 features of object datatype
+- 5 features of int6 datatype
+
+**Other**
+- Max null values are for feature: *total_onshift_partners*, *total_busy_Partners*, *total_outstanding_orders* all 8.237% and *store_primary_category* with 2.411% and *market_id* with 0.5%.
+- No duplicate values are present
+
+### Data Preprocessing
+- Change the feature with dates into datetime data type.
+- drop the records with no delivery time.
+
+### Feature Engineering
+- Create new feature *time_taken* which is the difference of order time (*created_at*) and delivery time (*actual_delivery_time*).
+- Extract the month, year, day, week, hour, minute like data from these above mentioned features to create new features out of it.
+
+### Data Cleaning
+- Replace the missing values with **mode** for categorical and **median** for numerical.
+- With the help of target encoding, encode the features: *store_id* and *store_primary_category*.
+- Finally, drop the *created_at* and *actual_delivery_time* from the dataset.
+
