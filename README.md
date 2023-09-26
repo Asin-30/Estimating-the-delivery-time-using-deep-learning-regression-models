@@ -72,7 +72,7 @@ IMAGE
 
 **4. How the delivery time is varying with price and type of food being ordered?** <br>
 <br>
-IMAGE
+
 *Observation*
 - No matter the store category, top 10 food categories takes almost same time.
 - Almost all the food categories's subtotal is concentrated in a speicific sub-total ie.e 0 - 15000 dollars.
@@ -80,14 +80,19 @@ IMAGE
 
 **5. How the different prices is varying with delivery time?** <br>
 <br>
-IMAGE
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/c091843c-0006-496e-9ff2-fe11ecef4c2f)
+![time_taken vs different prices](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/4ea9b163-1a04-4d33-8159-fa7a730153c5)
+<br>
+And after removing the extreme cases.
+<br>
+![Time_taken vs subtotal, min_item_price, max_item_price](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/e8851450-12f4-4cd1-99db-3adfe68fc862)
+
 <br>
 
 
 **6. Comparing the performance of different markets based on the available features.** <br>
 <br>
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/23b51208-1e7a-4aea-bd92-099854e0f188)
+![market_id vs other features](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/cecd3cea-413f-454f-9000-a026fd0b6cca)
+
 *Observation*
 - Market with id = 2 has the max number of stores followed by market = 4. Market 6 has least number of stores.
 - Stores in market 2 takes least time to deliver their food and market 1 takes the most time. However, it should be noted that there is not very significant difference.
@@ -102,7 +107,8 @@ IMAGE
 
 **7. Comparing the performance of different food categories based on the available features.** <br>
 <br>
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/cfb7c7dc-0fff-4113-9bdf-34f68b9eb494)
+![Store_primary_categry vs other features](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/b7910b6e-c508-474d-b172-fb9439e78031)
+
 *Observation*
 - Maximum number of stores are for 'american' food, followed by 'pizza' and 'mexican' categories. Least number of stores are for *fast* and *Indian*, among the popular food categories.
 - Time takes to deliver food is highest among japanese stores, followed by pizza and indian food stores.
@@ -122,23 +128,31 @@ IMAGE
 
 **9. Variation of sales on each day of month**<br>
 <br>
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/57a3b5d0-a320-41be-bcf1-0ef923400637)
+![Mean_sales on each day of month](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/2514b1be-69a2-4ee1-96e7-0eecb8c489bc)
+
 
 
 **10. variation of sales with each hour in a day**<br>
 <br>
 It appears that people like to order food more at late night.
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/fdc12e17-7416-4d04-9f4b-c92ae261524a)
+![Mean sales on each hour of day](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/233f5d72-f059-4436-a592-f29d98b002c3)
 
 
 **11. Variation in sales in  a week**<br>
 <br>
 - On weekends people like to order food relatively more as compare to other days.
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/e01c86e8-da8e-4c7c-92eb-41aedb79409e)
+![Mean sales of each weekday](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/5b9e8b42-6092-462c-b48e-035b2a39db2b)
+
 <br>
 
+**12. Correlation among features**<br>
+![Heatmap for Correlation ](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/172139e2-ec0b-4ad2-9407-852db7d3f3b1)
 
-
+**Observation**
+- The delivery time is not showing any correlation with any of the features.
+- *Subtotal* is showing a slight positive correlation with *num_distinct_items*.
+- *total_onshift_partners* are strongly positively correlated with *total_outstanding_orders* and *total_busy_partners*.
+- *total_busy_partners* are strongly positively correlated with *total_outstanding_partners* and *total_onshift_parnters*.
 
 ### Outlier Detection and Handling
 IQR methods is used for detection and handling.
