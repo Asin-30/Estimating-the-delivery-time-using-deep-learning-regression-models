@@ -107,8 +107,6 @@ And after removing the extreme cases.
 
 
 **7. Comparing the performance of different food categories based on the available features.** <br>
-<br>
-![Store_primary_categry vs other features](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/b7910b6e-c508-474d-b172-fb9439e78031)
 
 *Observation*
 - Maximum number of stores are for 'american' food, followed by 'pizza' and 'mexican' categories. Least number of stores are for *fast* and *Indian*, among the popular food categories.
