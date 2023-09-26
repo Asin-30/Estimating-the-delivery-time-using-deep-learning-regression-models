@@ -2,7 +2,7 @@
 This case study compares the performance of algorithms from classical machine learning like Bagging (Random Forest) and Deep Learning model.
 
 ## Objective
-An online food delivery app has a number of delivery partners available for delivering the food, from various restaurants and wants to get an estimated delivery time that it can provide the customers on the basis of what they are ordering, from where and also the delivery partners.
+An online food delivery app has a number of delivery  partners available for delivering the food, from various restaurants and wants to get an estimated delivery time that it can provide the customers on the basis of what they are ordering, from where and also the delivery partners.
 <br>
 This dataset has the required data to train a regression model that will do the delivery time estimation, based on all those features.
 
