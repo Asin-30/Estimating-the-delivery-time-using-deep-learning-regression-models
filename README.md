@@ -63,15 +63,16 @@ Each row in this file corresponds to one unique delivery. Each column correspond
   
 **2. Which are the top 10 and bottom 10 stores where is business is best/worst ?** <br>
 <br>
-IMAGE
+![Best and worst performing stores](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/54081cf3-71fd-42d2-955e-9d5e512282f4)
+
 
 **3. What are the store's primary categories of selling that are best/worst for business?** <br>
 <br>
-IMAGE
-
+![Best   Worst performing food categories](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/db5264bf-bbeb-4fc9-a026-a21f674812ff)
 
 **4. How the delivery time is varying with price and type of food being ordered?** <br>
 <br>
+![Distribution of numerical columns](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/0662bb89-3527-4b18-8706-5dd7bb361ea6)
 
 *Observation*
 - No matter the store category, top 10 food categories takes almost same time.
@@ -158,16 +159,15 @@ It appears that people like to order food more at late night.
 IQR methods is used for detection and handling.
 **Detection**<br>
 <br>
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/4a11f45e-e39e-41e2-adf7-79fd85b884d7)
-
+![Outliers Detection using distplot and boxplot](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/7da2bf0d-3f1f-407d-aa94-f210ed228493)
 
 **Outlier Removal**<br>
 <br>
 There was 3.18% of drop in records after removing outliers from *time_taken* and over all 7.53% drop of rows after dropping outliers from *time_taken* and *sub_total* both.
-![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/e2245759-9f5c-42e9-8b5c-80d0c92c7123)
-
 
 Post outlier removal features looked slightly normal on comparison to the earlier ones.<br>
+![Distribution after outlier removal](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/ea5bd2a4-dfd1-4a80-8c1f-bd21a0244611)
+
 <br>
 
 
@@ -200,9 +200,21 @@ For the sake of easy of computation we will use only one hidden layer  in our Ne
 <br>
 for our first model we use 2/3 of total rows in train dataset as neurons present in hidden layer. We will use callback function `EarlyStopping` to stop the training when training and validation loss attain a flat curve.
 We will also use BatchNormalization, regularization and dropout to prevent overfitting. We will train the model for 30 epochs.
+![Train and valid loss for NN1](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/c52cd25e-a98b-42b5-82a3-3401f0e8c28c)
+
 
 **2.3 Tuning the NN model**<br>
 In this model we will decrease number of neurons in the hidden layers by a little.  Introduce a callback `LearningRateScheduler`, this will change the learning rate at every epoch and apply that learning rate to optimizer  as training progresses.
+
+![Train and valid loss for NN2](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/df6a2c86-5781-4d01-85c4-aa761c41fb7e)
+
+
+
+#### Comparing the performance
+<br>
+![image](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/c27910c1-835e-4e81-ba23-e1427dc4900c)
+
+We can see that first NN model i.e. *Neural Network 1* outperfromed all other models. It gave lease rmse (6%). This also shows that deep learning models have shown drastic improvements in terms of error reduction and enhance the model's accuracy.
 
 
 
