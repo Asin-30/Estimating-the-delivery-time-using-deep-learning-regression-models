@@ -198,7 +198,7 @@ For the sake of easy of computation we will use only one hidden layer  in our Ne
 <br>
 for our first model we use 2/3 of total rows in train dataset as neurons present in hidden layer. We will use callback function `EarlyStopping` to stop the training when training and validation loss attain a flat curve.
 We will also use BatchNormalization, regularization and dropout to prevent overfitting. We will train the model for 30 epochs.
-![Train and valid loss for NN1](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/c52cd25e-a98b-42b5-82a3-3401f0e8c28c)
+![Train and valid loss for NN1](https://github.com/Asin-30/Estimating-the-delivery-time-using-deep-learning-regression-models/assets/69243814/f2d49eab-e02e-4b71-bcc7-ea71764c77a0)
 
 
 **2.3 Tuning the NN model**<br>
